@@ -9,10 +9,10 @@ interface InvestmentInstrumentApi {
     @GET("/investment/instruments")
     suspend fun getAllInstruments(
         @Query("page") page: Int = 1
-    ):ApiResponse
+    ): ApiResponse
 
     @GET("/investment/instruments/search")
     suspend fun searchInstruments(
         @Query("page") name: String
-    ):ApiResponse
+    ): ApiResponse
 }

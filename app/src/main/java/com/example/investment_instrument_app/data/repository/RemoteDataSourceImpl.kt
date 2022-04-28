@@ -17,12 +17,12 @@ class RemoteDataSourceImpl(
     private val investmentApi: InvestmentInstrumentApi,
     private val investmentDatabase: InvestmentInstrumentDatabase
 
-): RemoteDataSource {
+) : RemoteDataSource {
 
     private val instrumentDao = investmentDatabase.instrumentDao()
 
     override fun getAllInstruments(): Flow<PagingData<Instrument>> {
-        val pagingSourceFactory = {instrumentDao.getAllInstruments()}
+        val pagingSourceFactory = { instrumentDao.getAllInstruments() }
 
         return Pager(
             config = PagingConfig(pageSize = ITEMS_PER_PAGE),

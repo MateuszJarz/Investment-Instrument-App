@@ -9,14 +9,13 @@ import com.example.investment_instrument_app.data.local.InvestmentInstrumentData
 import com.example.investment_instrument_app.data.remote.InvestmentInstrumentApi
 import com.example.investment_instrument_app.domain.model.Instrument
 import com.example.investment_instrument_app.domain.model.InstrumentRemoteKeys
-import java.lang.Exception
 import javax.inject.Inject
 
 @ExperimentalPagingApi
 class InstrumentRemoteMediator @Inject constructor(
     private val instrumentApi: InvestmentInstrumentApi,
     private val instrumentDatabase: InvestmentInstrumentDatabase
-) : RemoteMediator<Int,Instrument>(){
+) : RemoteMediator<Int, Instrument>() {
 
     private val instrumentDao = instrumentDatabase.instrumentDao()
     private val instrumentRemoteKeysDao = instrumentDatabase.instrumentRemoteKeysDao()
@@ -86,6 +85,7 @@ class InstrumentRemoteMediator @Inject constructor(
             }
         }
     }
+
     private suspend fun getRemoteKeyForFirstItem(
         state: PagingState<Int, Instrument>
     ): InstrumentRemoteKeys? {
@@ -94,6 +94,7 @@ class InstrumentRemoteMediator @Inject constructor(
                 instrumentRemoteKeysDao.getRemoteKeys(instrumentId = instrument.id)
             }
     }
+
     private suspend fun getRemoteKeyForLastItem(
         state: PagingState<Int, Instrument>
     ): InstrumentRemoteKeys? {

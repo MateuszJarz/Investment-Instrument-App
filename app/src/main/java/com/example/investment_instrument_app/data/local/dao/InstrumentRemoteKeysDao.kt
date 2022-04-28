@@ -1,10 +1,12 @@
 package com.example.investment_instrument_app.data.local.dao
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.investment_instrument_app.domain.model.InstrumentRemoteKeys
 
+@Dao
 interface InstrumentRemoteKeysDao {
 
     @Query("SELECT * FROM instrument_remote_keys_table WHERE id = :instrumentId")
