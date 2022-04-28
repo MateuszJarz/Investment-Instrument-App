@@ -11,6 +11,7 @@ data class Instrument(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val image: String,
+    val name: String,
     val about: String,
     val rating: Double,
     val family: List<String>,

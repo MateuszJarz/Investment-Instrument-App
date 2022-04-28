@@ -20,7 +20,7 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(
         @ApplicationContext context: Context
-    ): RoomDatabase {
+    ): InvestmentInstrumentDatabase {
         return Room.databaseBuilder(
             context,
             InvestmentInstrumentDatabase::class.java,
