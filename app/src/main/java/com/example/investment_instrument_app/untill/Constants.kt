@@ -9,6 +9,10 @@ object Constants {
     const val INSTRUMENT_DATABASE_TABLE = "instrument_table"
     const val INSTRUMENT_REMOTE_KEYS_DATABASE_TABLE = "instrument_remote_keys_table"
 
+    //NAVIGATION
+    const val DETAILS_ARGUMENT_KEY = "instrumentId"
+
+
     //PAGING
     const val ITEMS_PER_PAGE = 3
 
