@@ -28,7 +28,7 @@ class RemoteDataSourceImpl(
             config = PagingConfig(pageSize = ITEMS_PER_PAGE),
             remoteMediator = InstrumentRemoteMediator(
                 instrumentApi = investmentApi,
-                instrumentDatabase = investmentDatabase
+                investmentInstrumentDatabase = investmentDatabase
             ),
             pagingSourceFactory = pagingSourceFactory
         ).flow

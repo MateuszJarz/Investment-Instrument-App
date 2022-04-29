@@ -13,6 +13,6 @@ interface InvestmentInstrumentApi {
 
     @GET("/investment/instruments/search")
     suspend fun searchInstruments(
-        @Query("page") name: String
+        @Query("name") name: String
     ): ApiResponse
 }

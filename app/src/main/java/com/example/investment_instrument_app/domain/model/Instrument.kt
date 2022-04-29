@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 @Entity(tableName = INSTRUMENT_DATABASE_TABLE)
 data class Instrument(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     val image: String,
     val name: String,
