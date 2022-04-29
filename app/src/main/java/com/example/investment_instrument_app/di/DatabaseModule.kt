@@ -1,9 +1,12 @@
 package com.example.investment_instrument_app.di
 
 import android.content.Context
+import androidx.datastore.dataStore
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.investment_instrument_app.data.local.InvestmentInstrumentDatabase
+import com.example.investment_instrument_app.data.repository.LocalDataSourceImpl
+import com.example.investment_instrument_app.domain.repository.LocalDataSource
 import com.example.investment_instrument_app.untill.Constants.INSTRUMENT_DATABASE
 import dagger.Module
 import dagger.Provides
@@ -26,5 +29,15 @@ object DatabaseModule {
             InvestmentInstrumentDatabase::class.java,
             INSTRUMENT_DATABASE
         ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideLocalDataSource(
+        database: InvestmentInstrumentDatabase
+    ): LocalDataSource {
+        return LocalDataSourceImpl(
+            investmentDatabase = database
+        )
     }
 }

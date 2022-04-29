@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
+import com.example.investment_instrument_app.presentation.screen.details.DetailsScreen
 import com.example.investment_instrument_app.presentation.screen.home.HomeScreen
 import com.example.investment_instrument_app.untill.Constants.DETAILS_ARGUMENT_KEY
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -39,7 +40,7 @@ fun SetupNavGraph(navController: NavHostController) {
                 type = NavType.IntType
             })
         ) {
-
+                DetailsScreen(navController = navController)
         }
         composable(route = Screen.Search.route) {
             //SearchScreen()
